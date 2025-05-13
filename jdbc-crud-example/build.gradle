@@ -1,0 +1,28 @@
+plugins {
+    id("java")
+    id("application")
+}
+
+group = "com.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // H2 Database
+    implementation("com.h2database: h2:2.3.232")
+}
+application {
+    mainClass.set("com.example.Main")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
